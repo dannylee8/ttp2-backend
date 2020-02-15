@@ -3,7 +3,7 @@ class CreateStocks < ActiveRecord::Migration[6.0]
     create_table :stocks do |t|
       t.string :symbol
       t.integer :shares
-      t.decimal :price, precision: 5, scale: 2
+      t.decimal :price, precision: 8, scale: 2
 
       t.timestamps
     end
