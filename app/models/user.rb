@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
+  has_many :stocks
 
   validates :username, presence: true
   validates :email, presence: true
