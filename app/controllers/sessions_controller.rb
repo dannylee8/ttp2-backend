@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
     end
   end
   
-  # if they are already logged_in? (applicationController) then set user to current_user
+  # if they are already logged_in? (applicationController) then render current_user object
   def is_logged_in?
     if logged_in? && current_user
       render json: {
