@@ -2,7 +2,7 @@ class StocksController < ApplicationController
 
   # create a user and login!(application controller) them
   def create
-    @stock = Stock.new(user_params)
+    @stock = Stock.new(stock_params)
     if @stock.save
       render json: {
         status: :created,
@@ -18,7 +18,7 @@ class StocksController < ApplicationController
 
   private
     
-  def user_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation, :cash)
+  def stock_params
+    params.require(:stock).permit(:symbol, :shares, :price, :user_id)
   end
 end
