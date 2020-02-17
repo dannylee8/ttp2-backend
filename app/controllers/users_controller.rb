@@ -45,6 +45,22 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    @user = User.find_by(id: params[:id])
+    @user.update(user_params)
+    if @user.save
+      render json: {
+        status: :updated,
+        user: @user
+      }
+    else 
+      render json: {
+        status: 500,
+        errors: @user.errors.full_messages
+      }
+    end
+  end
+
   private
     
   def user_params
