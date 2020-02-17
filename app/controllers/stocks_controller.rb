@@ -1,6 +1,6 @@
 class StocksController < ApplicationController
 
-  # create a user and login!(application controller) them
+  # create a stock 
   def create
     @stock = Stock.new(stock_params)
     if @stock.save

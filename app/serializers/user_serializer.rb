@@ -11,6 +11,7 @@ class UserSerializer < ActiveModel::Serializer
     return total
   end 
 
+  # sum up value of entire portfolio
   def portfolio_current_value
     total = 0
 
